@@ -1,0 +1,156 @@
+/* General Styling */
+:root {
+    --primary-blue: #007bff;
+    --dark-blue: #2c3e50;
+    --light-grey: #f4f4f9;
+    --border-color: #ddd;
+    --danger-red: #dc3545;
+    --warning-yellow: #ffc107;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light-grey);
+    color: #333;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Header */
+.main-header {
+    background: var(--dark-blue);
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-text div {
+    font-size: 0.9em;
+    line-height: 1.2;
+}
+.user-info {
+    font-size: 0.9em;
+}
+
+/* Login and Confirmation Cards */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px;
+}
+.login-card, .confirm-card, .confirm-card-centered {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+}
+.login-card { max-width: 400px; }
+.confirm-card { max-width: 600px; }
+.confirm-card-centered { max-width: 500px; text-align: center; }
+
+h2, h3 {
+    margin-bottom: 15px;
+    color: var(--dark-blue);
+}
+.login-card p {
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+.input-group #togglePassword {
+    left: auto;
+    right: 15px;
+    cursor: pointer;
+}
+.input-group input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+}
+.btn-primary { background-color: var(--primary-blue); }
+.btn-secondary { background-color: #6c757d; }
+.btn-danger { background-color: var(--danger-red); }
+.btn-warning { background-color: var(--warning-yellow); color: #333; }
+.btn-refresh { background-color: #eee; color:#333; padding: 5px 10px; border: 1px solid #ccc; width: auto; }
+
+/* Confirmation Page Specifics */
+.token-bar { padding: 10px 30px; background-color: white; border-bottom: 1px solid var(--border-color); }
+.form-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.form-row label { color: #555; }
+.form-row input, .form-row select { width: 50%; padding: 8px; border: 1px solid var(--border-color); border-radius: 4px; }
+.dob-group { display: flex; gap: 10px; width: 50%; }
+.dob-group select { width: 100%; }
+.test-info-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; }
+
+/* Ujian Page */
+.ujian-control-panel { display: flex; justify-content: space-between; align-items: center; background-color: var(--primary-blue); color: white; padding: 10px 30px; }
+.panel-left, .panel-right { display: flex; align-items: center; gap: 20px; }
+.font-sizer button { padding: 2px 8px; }
+.ujian-main { padding: 20px; }
+.soal-container {
+    display: flex;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    min-height: 60vh;
+}
+.stimulus-panel { width: 50%; padding: 20px; border-right: 1px solid var(--border-color); }
+.question-panel { width: 50%; padding: 20px; }
+.stimulus-panel h4, .question-panel h4 { margin-bottom: 15px; }
+.stimulus-panel img { max-width: 100%; height: auto; margin: 15px 0; }
+.stimulus-panel p, .question-panel p { line-height: 1.6; margin-bottom: 15px; }
+
+/* Answer types */
+.pilihan-ganda-item, .pg-kompleks-item { margin-bottom: 15px; }
+.bs-table { width: 100%; margin-top: 15px; border-collapse: collapse; }
+.bs-table td, .bs-table th { border: 1px solid var(--border-color); padding: 10px; text-align: left; }
+.bs-table th { background-color: #f2f2f2; }
+.bs-table td:nth-child(2), .bs-table td:nth-child(3) { text-align: center; }
+.isian-jawaban { width: 100%; min-height: 100px; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; margin-top: 15px; }
+
+
+.ujian-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+.ujian-footer .btn { width: auto; }
