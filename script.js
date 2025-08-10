@@ -3,12 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // === BAGIAN DATA (DATABASE SEMENTARA) ===
     const mockUser = {
-        username: 'P130100230',
-        password: '123456',
-        nik: 'P130100230',
+        username: 'P0211016400018',
+        password: '654449*',
+        nik: 'P0211016400018',
         nama: 'Peserta 01',
+        gender: 'Laki-Laki', // Data baru
         ujian: 'Literasi - SMP/MTs/PAKET B',
-        token: 'ABCDE'
+        token: 'ZFKHGF' // Token sesuai gambar
     };
     
     // Teks Stimulus untuk digunakan berulang kali
@@ -33,109 +34,21 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>Program ecoprint yang dimulai tahun 2017 ini telah memberdayakan para ibu rumah tangga untuk melakukan kegiatan positif dan memiliki penghasilan.</p>
 <p><small>Tawas : Kristal garam transparan yang larut dalam air, disebut aluminium kalium sulfat.</small></p>`;
 
-    // Array berisi semua objek soal
     const questions = [
-        {
-            stimulus: stimulusPutriLopian,
-            questionText: '1. Siapa sahabat Putri Lopian yang mendatangi dan menarik-narik kainnya?',
-            instruction: 'Pilihlah jawaban yang benar dengan memberi tanda centang (√)! Jawaban benar lebih dari satu.',
-            type: 'checkbox',
-            options: ['Kelinci', 'Rusa', 'Kura-kura', 'Ikan'],
-            answer: ['Kelinci', 'Rusa']
-        },
-        {
-            stimulus: stimulusPutriLopian,
-            questionText: '2. Apa yang dilakukan kura-kura dan Putri Lopian setelah gempa besar terjadi?',
-            type: 'radio',
-            options: [
-                'Kura-kura menarik Putri Lopian untuk menjauhi pantai.',
-                'Kura-kura dan Putri Lopian bergegas berlari menuju ke hutan.',
-                'Putri Lopian mengajak kura-kura berlari ke laut mencari orang tuanya.',
-                'Putri Lopian berpegangan pada tempurung kura-kura.'
-            ],
-            answer: 'Putri Lopian berpegangan pada tempurung kura-kura.'
-        },
-        {
-            stimulus: stimulusPutriLopian,
-            questionText: '3. Berdasarkan gambar dan isi cerita tersebut, apa yang membuat Putri Lopian selamat dari gelombang dahsyat?',
-            type: 'radio',
-            options: [
-                'Kepandaian Putri Lopian berenang karena istananya dekat pantai.',
-                'Persahabatan Putri Lopian dengan binatang yang selalu mengikutinya.',
-                'Kekuatan yang dimiliki oleh Putri Lopian yang didapat dari teman-temannya.',
-                'Dataran tinggi sebagai tujuan Putri Lopian untuk menghindari gelombang.'
-            ],
-            answer: 'Persahabatan Putri Lopian dengan binatang yang selalu mengikutinya.'
-        },
-        {
-            stimulus: stimulusPutriLopian,
-            questionText: '4. Bagaimana sifat kura-kura beserta alasan yang sesuai berdasarkan cerita tersebut?',
-            instruction: 'Pilihlah jawaban yang benar dengan memberi tanda centang (√)! Jawaban benar lebih dari satu.',
-            type: 'checkbox',
-            options: [
-                'Pemalu karena bila ada orang lain datang dia akan bersembunyi.',
-                'Penolong karena menyelamatkan Putri Lopian dan membawanya ke dataran tinggi.',
-                'Penyayang karena hingga dewasa dia masih menyayangi hewan-hewan lain.',
-                'Peduli karena mengajak Putri Lopian untuk menjauhi pantai setelah terjadi gempa'
-            ],
-            answer: ['Pemalu karena bila ada orang lain datang dia akan bersembunyi.', 'Penolong karena menyelamatkan Putri Lopian dan membawanya ke dataran tinggi.']
-        },
-        {
-            stimulus: stimulusMengikatWarna,
-            questionText: '5. Manakah dari pernyataan berikut yang menjelaskan keberhasilan kampung kerajinan batik?',
-            type: 'radio',
-            options: [
-                'Kerajinan ecoprint sangat bagus karena menggunakan bahan impor.',
-                'Kerajinan batik ecoprint memiliki keistimewaan dibanding teknik lain.',
-                'Butuh modal yang sangat besar untuk membuat kerajinan ecoprint.',
-                'Kerajinan batik biasanya menghasilkan limbah, termasuk ecoprint.'
-            ],
-            answer: 'Kerajinan batik ecoprint memiliki keistimewaan dibanding teknik lain.'
-        },
-        {
-            stimulus: stimulusMengikatWarna,
-            questionText: '6. Pernyataan berikut menjelaskan tentang keunggulan-keunggulan batik ecoprint dibanding batik cap atau cetak pada umumnya.',
-            instruction: 'Klik pilihan Benar atau Salah untuk setiap pernyataan sesuai isi teks!',
-            type: 'true-false',
-            statements: [
-                'A. Bahan membatik ecoprint menggunakan bahan alami sehingga ramah lingkungan dibanding bahan batik cap yang menghasilkan limbah tekstil.',
-                'B. Desain pada batik ecoprint yang tidak massal menjadikannya eksklusif dibanding desain batik cap yang mudah dijumpai.',
-                'C. Proses pembuatan batik ecoprint tidak membutuhkan keterampilan khusus dibanding batik cap yang rumit proses pembuatannya.'
-            ],
-            answer: ['Benar', 'Salah', 'Benar'] // Sesuai kunci jawaban A Benar, B Salah, C Benar
-        },
-        {
-            stimulus: stimulusMengikatWarna,
-            questionText: '7. Mengapa teknik kerajinan batik ecoprint bagus untuk memberdayakan ibu rumah tangga?',
-            instruction: 'Pilihlah jawaban yang benar dengan memberi tanda centang (√)! Jawaban benar lebih dari satu.',
-            type: 'checkbox',
-            options: [
-                'Ibu rumah tangga memiliki keahlian berbicara sehingga sangat cocok di bagian penjualan.',
-                'Pengerjaan batik ecoprint butuh keterampilan yang dapat dikerjakan oleh ibu rumah tangga.',
-                'Hasil dari kegiatan membatik ecoprint dapat digunakan sebagai tambahan pemasukan keluarga.',
-                'Batik dengan teknik ecoprint butuh tenaga besar yang sesuai dengan tenaga ibu rumah tangga.'
-            ],
-            answer: ['Pengerjaan batik ecoprint butuh keterampilan yang dapat dikerjakan oleh ibu rumah tangga.', 'Hasil dari kegiatan membatik ecoprint dapat digunakan sebagai tambahan pemasukan keluarga.']
-        },
-        {
-            stimulus: stimulusMengikatWarna,
-            questionText: '8. Setelah membaca teks tersebut, apa yang dapat kamu refleksikan berdasarkan isinya?',
-            instruction: 'Klik pilihan Benar atau Salah untuk setiap pernyataan sesuai isi teks!',
-            type: 'true-false',
-            statements: [
-                'A. Teks mampu membuka wawasan tentang seluk beluk batik ecoprint.',
-                'B. Teks memberikan informasi mengenai peluang usaha dengan membatik ecoprint.',
-                'C. Teks memberikan semangat untuk menjaga kesehatan diri saat membatik ecoprint.'
-            ],
-            answer: ['Benar', 'Benar', 'Salah']
-        }
+        {stimulus: stimulusPutriLopian, questionText: '1. Siapa sahabat Putri Lopian yang mendatangi dan menarik-narik kainnya?', instruction: 'Pilihlah jawaban yang benar dengan memberi tanda centang (√)! Jawaban benar lebih dari satu.', type: 'checkbox', options: ['Kelinci', 'Rusa', 'Kura-kura', 'Ikan'], answer: ['Kelinci', 'Rusa']},
+        {stimulus: stimulusPutriLopian, questionText: '2. Apa yang dilakukan kura-kura dan Putri Lopian setelah gempa besar terjadi?', type: 'radio', options: ['Kura-kura menarik Putri Lopian untuk menjauhi pantai.', 'Kura-kura dan Putri Lopian bergegas berlari menuju ke hutan.', 'Putri Lopian mengajak kura-kura berlari ke laut mencari orang tuanya.', 'Putri Lopian berpegangan pada tempurung kura-kura.'], answer: 'Putri Lopian berpegangan pada tempurung kura-kura.'},
+        {stimulus: stimulusPutriLopian, questionText: '3. Berdasarkan gambar dan isi cerita tersebut, apa yang membuat Putri Lopian selamat dari gelombang dahsyat?', type: 'radio', options: ['Kepandaian Putri Lopian berenang karena istananya dekat pantai.', 'Persahabatan Putri Lopian dengan binatang yang selalu mengikutinya.', 'Kekuatan yang dimiliki oleh Putri Lopian yang didapat dari teman-temannya.', 'Dataran tinggi sebagai tujuan Putri Lopian untuk menghindari gelombang.'], answer: 'Persahabatan Putri Lopian dengan binatang yang selalu mengikutinya.'},
+        {stimulus: stimulusPutriLopian, questionText: '4. Bagaimana sifat kura-kura beserta alasan yang sesuai berdasarkan cerita tersebut?', instruction: 'Pilihlah jawaban yang benar dengan memberi tanda centang (√)! Jawaban benar lebih dari satu.', type: 'checkbox', options: ['Pemalu karena bila ada orang lain datang dia akan bersembunyi.', 'Penolong karena menyelamatkan Putri Lopian dan membawanya ke dataran tinggi.', 'Penyayang karena hingga dewasa dia masih menyayangi hewan-hewan lain.', 'Peduli karena mengajak Putri Lopian untuk menjauhi pantai setelah terjadi gempa'], answer: ['Pemalu karena bila ada orang lain datang dia akan bersembunyi.', 'Penolong karena menyelamatkan Putri Lopian dan membawanya ke dataran tinggi.']},
+        {stimulus: stimulusMengikatWarna, questionText: '5. Manakah dari pernyataan berikut yang menjelaskan keberhasilan kampung kerajinan batik?', type: 'radio', options: ['Kerajinan ecoprint sangat bagus karena menggunakan bahan impor.', 'Kerajinan batik ecoprint memiliki keistimewaan dibanding teknik lain.', 'Butuh modal yang sangat besar untuk membuat kerajinan ecoprint.', 'Kerajinan batik biasanya menghasilkan limbah, termasuk ecoprint.'], answer: 'Kerajinan batik ecoprint memiliki keistimewaan dibanding teknik lain.'},
+        {stimulus: stimulusMengikatWarna, questionText: '6. Pernyataan berikut menjelaskan tentang keunggulan-keunggulan batik ecoprint dibanding batik cap atau cetak pada umumnya.', instruction: 'Klik pilihan Benar atau Salah untuk setiap pernyataan sesuai isi teks!', type: 'true-false', statements: ['A. Bahan membatik ecoprint menggunakan bahan alami sehingga ramah lingkungan dibanding bahan batik cap yang menghasilkan limbah tekstil.', 'B. Desain pada batik ecoprint yang tidak massal menjadikannya eksklusif dibanding desain batik cap yang mudah dijumpai.', 'C. Proses pembuatan batik ecoprint tidak membutuhkan keterampilan khusus dibanding batik cap yang rumit proses pembuatannya.'], answer: ['Benar', 'Salah', 'Benar']},
+        {stimulus: stimulusMengikatWarna, questionText: '7. Mengapa teknik kerajinan batik ecoprint bagus untuk memberdayakan ibu rumah tangga?', instruction: 'Pilihlah jawaban yang benar dengan memberi tanda centang (√)! Jawaban benar lebih dari satu.', type: 'checkbox', options: ['Ibu rumah tangga memiliki keahlian berbicara sehingga sangat cocok di bagian penjualan.', 'Pengerjaan batik ecoprint butuh keterampilan yang dapat dikerjakan oleh ibu rumah tangga.', 'Hasil dari kegiatan membatik ecoprint dapat digunakan sebagai tambahan pemasukan keluarga.', 'Batik dengan teknik ecoprint butuh tenaga besar yang sesuai dengan tenaga ibu rumah tangga.'], answer: ['Pengerjaan batik ecoprint butuh keterampilan yang dapat dikerjakan oleh ibu rumah tangga.', 'Hasil dari kegiatan membatik ecoprint dapat digunakan sebagai tambahan pemasukan keluarga.']},
+        {stimulus: stimulusMengikatWarna, questionText: '8. Setelah membaca teks tersebut, apa yang dapat kamu refleksikan berdasarkan isinya?', instruction: 'Klik pilihan Benar atau Salah untuk setiap pernyataan sesuai isi teks!', type: 'true-false', statements: ['A. Teks mampu membuka wawasan tentang seluk beluk batik ecoprint.', 'B. Teks memberikan informasi mengenai peluang usaha dengan membatik ecoprint.', 'C. Teks memberikan semangat untuk menjaga kesehatan diri saat membatik ecoprint.'], answer: ['Benar', 'Benar', 'Salah']}
     ];
 
     let currentQuestionIndex = 0;
     let userAnswers = [];
     let timerInterval;
 
-    // === BAGIAN SELEKSI ELEMEN DOM ===
     const pages = document.querySelectorAll('.page');
     const headerLeft = document.getElementById('header-left');
     const headerRight = document.getElementById('header-right');
@@ -146,7 +59,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const questionPanel = document.getElementById('question-panel');
     const resultText = document.getElementById('result-text');
 
-    // === BAGIAN FUNGSI ===
+    // === FUNGSI BARU UNTUK TANGGAL LAHIR ===
+    function populateDateDropdowns() {
+        const daySelect = document.getElementById('confirm-day');
+        const monthSelect = document.getElementById('confirm-month');
+        const yearSelect = document.getElementById('confirm-year');
+        
+        for (let i = 1; i <= 31; i++) daySelect.innerHTML += `<option value="${i}">${i}</option>`;
+        const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+        months.forEach((m, i) => monthSelect.innerHTML += `<option value="${i+1}">${m}</option>`);
+        const currentYear = new Date().getFullYear();
+        for (let i = currentYear; i >= currentYear - 100; i--) yearSelect.innerHTML += `<option value="${i}">${i}</option>`;
+    }
+
     function showPage(pageId) {
         pages.forEach(page => page.style.display = 'none');
         document.getElementById(pageId).style.display = 'flex';
@@ -156,9 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const q = questions[index];
         stimulusPanel.innerHTML = q.stimulus;
         let questionHTML = `<h3>${q.questionText}</h3>`;
-        if (q.instruction) {
-            questionHTML += `<p><small>${q.instruction}</small></p>`;
-        }
+        if (q.instruction) questionHTML += `<p><small>${q.instruction}</small></p>`;
 
         if (q.type === 'radio' || q.type === 'checkbox') {
             q.options.forEach(opt => {
@@ -217,7 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     isCorrect = true;
                 }
             }
-
             if (isCorrect) score++;
         });
         return score;
@@ -238,15 +160,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // === BAGIAN EVENT LISTENERS ===
+    // === EVENT LISTENERS (DIPERBARUI) ===
     loginBtn.addEventListener('click', () => {
         const user = document.getElementById('username').value;
         const pass = document.getElementById('password').value;
         if (user === mockUser.username && pass === mockUser.password) {
             document.getElementById('data-nik').textContent = mockUser.nik;
-            document.getElementById('data-nama').textContent = mockUser.nama;
+            document.getElementById('data-nama-display').textContent = mockUser.nama;
+            document.getElementById('data-gender').textContent = mockUser.gender;
             document.getElementById('data-ujian').textContent = mockUser.ujian;
-            headerRight.innerHTML = `Token: <b>${mockUser.token}</b>`;
+            const tokenButton = `<button style="padding: 5px 10px; cursor:default;">Refresh</button>`;
+            headerRight.innerHTML = `Token: <b>${mockUser.token}</b> &nbsp; ${tokenButton}`;
             showPage('confirm-data-page');
         } else {
             alert('Username atau Password salah!');
@@ -254,8 +178,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     submitDataBtn.addEventListener('click', () => {
-        const token = document.getElementById('token-input').value;
-        if (token.toUpperCase() === mockUser.token) {
+        const inputNama = document.getElementById('confirm-nama').value;
+        const inputDay = document.getElementById('confirm-day').value;
+        const inputMonth = document.getElementById('confirm-month').value;
+        const inputYear = document.getElementById('confirm-year').value;
+        const inputToken = document.getElementById('token-input').value;
+
+        if (!inputNama || !inputDay || !inputMonth || !inputYear) {
+            alert('Nama dan Tanggal Lahir harus diisi!');
+            return;
+        }
+
+        if (inputToken.toUpperCase() === mockUser.token) {
             showPage('confirm-test-page');
         } else {
             alert('Token tidak valid!');
@@ -263,11 +197,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     startTestBtn.addEventListener('click', () => {
-        let timeLeft = 3600; // 60 menit
+        let timeLeft = 3600;
         timerInterval = setInterval(() => {
             if (timeLeft <= 0) {
                 clearInterval(timerInterval);
-                handleNextQuestion(); // Otomatis selesaikan jika waktu habis
+                handleNextQuestion();
             }
             const minutes = Math.floor(timeLeft / 60);
             const seconds = timeLeft % 60;
@@ -279,6 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderQuestion(currentQuestionIndex);
     });
 
-    // Inisialisasi: Tampilkan halaman login saat pertama kali dibuka
+    // Inisialisasi
+    populateDateDropdowns();
     showPage('login-page');
 });
