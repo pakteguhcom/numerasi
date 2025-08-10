@@ -39,12 +39,13 @@
             max-width: 500px;
             text-align: center;
         }
-        .card input {
-            width: calc(100% - 20px);
+        .card input, .card select {
+            width: 100%;
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            box-sizing: border-box;
         }
         .card button {
             width: 100%;
@@ -65,6 +66,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+        .confirm-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 15px;
+            align-items: center;
+        }
+        .confirm-grid label {
+            text-align: left;
+            font-weight: bold;
+        }
+        .date-select {
+            display: flex;
+            gap: 10px;
         }
         /* Layout Halaman Tes */
         #test-page-container {
@@ -122,15 +137,32 @@
         <div id="confirm-data-page" class="page" style="display:none;">
             <div class="card" style="max-width: 700px; text-align: left;">
                 <h2>Konfirmasi data Peserta</h2>
-                <p><strong>Kode NIK:</strong> <span id="data-nik"></span></p>
-                <p><strong>Nama Peserta:</strong> <span id="data-nama"></span></p>
-                <p><strong>Mata Ujian:</strong> <span id="data-ujian"></span></p>
+                <div class="confirm-grid">
+                    <label>Kode NIK</label> <p id="data-nik"></p>
+                    <label>Nama Peserta</label> <p id="data-nama-display"></p>
+                    <label>Jenis Kelamin</label> <p id="data-gender"></p>
+                    <label>Mata Ujian</label> <p id="data-ujian"></p>
+                </div>
                 <hr>
-                <label for="token-input">Ketikkan token di sini:</label>
-                <input type="text" id="token-input" placeholder="Token">
+                <div class="confirm-grid">
+                    <label for="confirm-nama">Nama Peserta</label>
+                    <input type="text" id="confirm-nama" placeholder="Ketikkan Nama Peserta">
+
+                    <label>Tanggal Lahir</label>
+                    <div class="date-select">
+                        <select id="confirm-day"><option value="">Hari</option></select>
+                        <select id="confirm-month"><option value="">Bulan</option></select>
+                        <select id="confirm-year"><option value="">Tahun</option></select>
+                    </div>
+
+                    <label for="token-input">Token</label>
+                    <input type="text" id="token-input" placeholder="Ketikkan token di sini">
+                </div>
+                <br>
                 <button id="submit-data-btn">Submit</button>
             </div>
         </div>
+
 
         <div id="confirm-test-page" class="page" style="display:none;">
             <div class="card">
@@ -146,10 +178,8 @@
 
         <div id="test-page" class="page" style="display:none;">
             <div id="test-page-container">
-                <div id="stimulus-panel">
-                    </div>
-                <div id="question-panel">
-                    </div>
+                <div id="stimulus-panel"></div>
+                <div id="question-panel"></div>
             </div>
         </div>
         
