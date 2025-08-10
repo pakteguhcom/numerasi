@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfirmasi Data - Aplikasi ANBK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-container">
+            <div class="logo-text">
+                <div>PUSMENDIK</div>
+                <div>APLIKASI ANBK</div>
+            </div>
+        </div>
+        <div class="user-info">
+            P130100230 - Peserta 01
+        </div>
+    </header>
+
+    <div class="token-bar">
+        <span>Token : CJIEDY</span>
+        <button class="btn-refresh">Refresh</button>
+    </div>
+
+    <main class="main-content">
+        <div class="confirm-card" id="konfirmasiData">
+            <h3>Konfirmasi Data Peserta</h3>
+            <div class="form-row">
+                <label>Kode NIK</label>
+                <span>P130100230</span>
+            </div>
+            <div class="form-row">
+                <label>Nama Peserta</label>
+                <span>P130100230 - Peserta 01</span>
+            </div>
+            <div class="form-row">
+                <label>Jenis Kelamin</label>
+                <select disabled><option>Laki-Laki</option></select>
+            </div>
+            <div class="form-row">
+                <label>Mata Ujian</label>
+                <span>Numerasi - SMP/MTs/PAKET B</span>
+            </div>
+            <hr>
+            <div class="form-row">
+                <label for="namaConfirm">Ketikkan Nama Peserta</label>
+                <input type="text" id="namaConfirm" placeholder="Ketikkan Nama Peserta">
+            </div>
+            <div class="form-row">
+                <label>Tanggal Lahir</label>
+                <div class="dob-group">
+                    <select><option>Hari</option></select>
+                    <select><option>Bulan</option></select>
+                    <select><option>Tahun</option></select>
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="tokenConfirm">Token</label>
+                <input type="text" id="tokenConfirm" placeholder="Ketikkan token di sini">
+            </div>
+            <button class="btn btn-primary" id="submitKonfirmasi">Submit</button>
+        </div>
+
+        <div class="confirm-card-centered hidden" id="konfirmasiTes">
+             <h3>Konfirmasi Tes</h3>
+             <div class="test-info-row">
+                <span>Nama Tes</span>
+                <strong>Numerasi - SMP/MTs/PAKET B</strong>
+             </div>
+             <div class="test-info-row">
+                <span>Status Tes</span>
+                <strong>Tes Baru</strong>
+             </div>
+             <div class="test-info-row">
+                <span>Waktu Tes</span>
+                <strong id="waktuTes"></strong>
+             </div>
+             <div class="test-info-row">
+                <span>Alokasi Waktu Tes</span>
+                <strong>60 Menit</strong>
+             </div>
+             <button class="btn btn-primary" id="mulaiTes">Mulai</button>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('submitKonfirmasi').addEventListener('click', function() {
+            // Lakukan validasi jika perlu
+            document.getElementById('konfirmasiData').classList.add('hidden');
+            const now = new Date();
+            const timeString = now.toLocaleDateString('id-ID') + ' ' + now.toLocaleTimeString('id-ID');
+            document.getElementById('waktuTes').innerText = timeString;
+            document.getElementById('konfirmasiTes').classList.remove('hidden');
+        });
+
+        document.getElementById('mulaiTes').addEventListener('click', function() {
+            window.location.href = 'ujian.html';
+        });
+    </script>
+</body>
+</html>
