@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian - Aplikasi ANBK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+         <div class="logo-container">
+            <div class="logo-text">
+                <div>PUSMENDIK</div>
+                <div>APLIKASI ANBK</div>
+            </div>
+        </div>
+        <div class="user-info">
+            P130100230 - Peserta 01
+        </div>
+    </header>
+
+    <div class="ujian-control-panel">
+        <div class="panel-left">
+            <span id="nomorSoalDisplay">Soal nomor 1</span>
+            <div class="font-sizer">
+                Ukuran Teks: <button>A</button><button>A</button><button>A</button>
+            </div>
+        </div>
+        <div class="panel-right">
+            <span>Sisa Waktu: <strong id="timer">60:00</strong></span>
+            <button class="btn-secondary">Daftar Soal</button>
+        </div>
+    </div>
+
+    <main class="ujian-main">
+        <div class="soal-container">
+            <div class="stimulus-panel" id="stimulusPanel">
+                </div>
+            <div class="question-panel" id="questionPanel">
+                 </div>
+        </div>
+    </main>
+    
+    <footer class="ujian-footer">
+        <button class="btn btn-danger" id="btnSebelumnya">&lt; Soal sebelumnya</button>
+        <button class="btn btn-warning" id="btnRagu">Ragu-ragu</button>
+        <button class="btn btn-primary" id="btnBerikutnya">Soal berikutnya &gt;</button>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
