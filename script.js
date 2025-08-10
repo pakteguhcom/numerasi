@@ -10,11 +10,33 @@ document.addEventListener('DOMContentLoaded', () => {
         ujian: 'Literasi - SMP/MTs/PAKET B',
         token: 'ABCDE'
     };
+    
+    // Teks Stimulus untuk digunakan berulang kali
+    const stimulusPutriLopian = `<h3>Putri Lopian (Kisah dari Tapanuli Tengah)</h3>
+<p>Liburan semester ini, Riga berlibur ke rumah Kakek di Sibolga, Sumatera Utara. Kakek senang sekali bercerita. Begitu banyak legenda yang Kakek ceritakan padanya. Kali ini, Kakek bercerita tentang Putri Lopian, seorang penyayang binatang yang memiliki banyak sahabat hewan.</p>
+<p>Setiap sore, Putri Lopian memanggil para sahabatnya dari balik pagar halaman istana yang berbatasan dengan hutan, lalu memberi mereka makan.</p>
+<p>Sahabatnya yang paling dekat adalah kura-kura, yang selalu mengikutinya. Namun, si kura-kura pemalu. Jika ada orang lain, si kura-kura akan bersembunyi, berpura-pura jadi batu.</p>
+<p>Suatu pagi, ketika dia sedang menemui teman-temannya di tepi hutan, gempa besar terjadi. Suasana kacau balau, penghuni istana berlarian keluar. Orang tuanya tidak ada! Kelinci dan rusa mendatanginya, menarik-narik kainnya agar dia ikut mereka ke arah hutan, menjauhi pantai.</p>
+<p>Sementara itu, orang-orang malah berlarian ke laut sambil membawa keranjang, berteriak, "Ikan! Banyak ikan di pantai!"</p>
+<p>Tiba-tiba saja gelombang dahsyat datang dari arah laut. Semua tersapu! Putri Lopian juga. Di mana-mana hanya ada air!</p>
+<p>Sebongkah batu muncul di dekatnya. Ternyata itu si kura-kura. Putri Lopian berpegangan ke tempurung sahabatnya. Kura-kura membawanya berenang ke dataran tinggi, dan hewan lain membantu menariknya.</p>
+<p>Akhirnya dia selamat! Sayang sekali, Putri Lopian tidak dapat menemukan orang tuanya. Namun, sahabat-sahabatnya menjadi pelipur lara. Hingga dewasa, dia masih menyayangi hewan-hewan itu.</p>`;
 
+    const stimulusMengikatWarna = `<h3>Mengikat Warna</h3>
+<p>Yogyakarta memiliki banyak kampung batik. Salah satu kampung batik yang unik terletak di Karangkajen. Kerajinan tangan ini dikerjakan kelompok ibu rumah tangga yang tergabung dalam Badan Usaha Milik Masyarakat (BUMMas). Produk yang dihasilkan diberi sebuah merek yang menunjukkan ciri khas bagaimana kerajinan tangan itu dibuat. Kini hasil produksi kelompok ibu rumah tangga itu telah menembus pasar ekspor ke Malaysia, Singapura, dan Australia.</p>
+<p>Keistimewaan pengerjaan kerajinan tangan tersebut adalah ecoprint. Teknik ini memanfaatkan berbagai dedaunan, bunga, dan ranting-ranting pohon yang disebarkan begitu saja secara acak atau ditata rapi di atas kain. Bahan-bahan itu digunakan untuk menggantikan cap atau cetak layaknya batik pada umumnya.</p>
+<p>Setelah proses penataan, kain digulung dan direbus beberapa waktu hingga saat dibuka kembali sudah terbentuk gambar daun, bunga, dan ranting. Selanjutnya kain diangin-anginkan dan difiksasi dengan air tawas agar warna lebih awet.</p>
+<p>Keunggulan ecoprint ini banyak sekali, di antaranya adalah desain yang tidak massal sehingga menjadikannya eksklusif. Teknik ini dapat diterapkan pada media selain kain, yang penting adalah media dapat menyerap warna alami daun dan bunga. Ecoprint juga mendukung gerakan menyelamatkan bumi karena bahan alami yang digunakannya. Selain itu jenis kerajinan tangan ini menjadi salah satu alternatif mengurangi limbah kimia dari pabrik tekstil.</p>
+<p>Belum banyak yang mengambil segmen ini karena prosesnya yang rumit dan membutuhkan ketelatenan, sehingga masih terbuka sebagai peluang bisnis. Perhitungan modalnya pun tidak begitu tinggi, sehingga dapat diterapkan di kalangan ekonomi bawah.</p>
+<p>Kelompok perajin Karangkajen ini menggunakan teknik ecoprint yang menonjolkan karakteristik dan pemberdayaan berbasis potensi lokal. Dukungan masyarakat dan pemerintah daerah telah mendongkrak omset per bulannya mencapai puluhan hingga ratusan juta rupiah.</p>
+<p>Selain memproduksi kain ecoprint dan aneka kerajinan tangan berbahan kain, kelompok perajin ini juga memanfaatkan potensi kampungnya menjadi destinasi wisata. Para wisatawan dapat melihat langsung proses produksi ecoprint sambil berbelanja produk unik yang harganya berkisar puluhan hingga ratusan ribu rupiah.</p>
+<p>Program ecoprint yang dimulai tahun 2017 ini telah memberdayakan para ibu rumah tangga untuk melakukan kegiatan positif dan memiliki penghasilan.</p>
+<p><small>Tawas : Kristal garam transparan yang larut dalam air, disebut aluminium kalium sulfat.</small></p>`;
+
+    // Array berisi semua objek soal
     const questions = [
-        // Teks 1: Putri Lopian
         {
-            stimulus: `<h3>Putri Lopian (Kisah dari Tapanuli Tengah)</h3><p>Liburan semester ini, Riga berlibur ke rumah Kakek di Sibolga, Sumatera Utara. Kakek senang sekali bercerita. Begitu banyak legenda yang Kakek ceritakan padanya. Kali ini, Kakek bercerita tentang Putri Lopian, seorang penyayang binatang yang memiliki banyak sahabat hewan...</p><p>[...teks lengkap Putri Lopian...]</p>`,
+            stimulus: stimulusPutriLopian,
             questionText: '1. Siapa sahabat Putri Lopian yang mendatangi dan menarik-narik kainnya?',
             instruction: 'Pilihlah jawaban yang benar dengan memberi tanda centang (√)! Jawaban benar lebih dari satu.',
             type: 'checkbox',
@@ -22,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             answer: ['Kelinci', 'Rusa']
         },
         {
-            stimulus: `<h3>Putri Lopian (Kisah dari Tapanuli Tengah)</h3><p>Liburan semester ini, Riga berlibur ke rumah Kakek di Sibolga, Sumatera Utara. Kakek senang sekali bercerita. Begitu banyak legenda yang Kakek ceritakan padanya. Kali ini, Kakek bercerita tentang Putri Lopian, seorang penyayang binatang yang memiliki banyak sahabat hewan...</p><p>[...teks lengkap Putri Lopian...]</p>`,
+            stimulus: stimulusPutriLopian,
             questionText: '2. Apa yang dilakukan kura-kura dan Putri Lopian setelah gempa besar terjadi?',
             type: 'radio',
             options: [
@@ -33,10 +55,33 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             answer: 'Putri Lopian berpegangan pada tempurung kura-kura.'
         },
-        // ... (Tambahkan soal 3 dan 4 dengan cara yang sama)
-        // Teks 2: Mengikat Warna
         {
-            stimulus: `<h3>Mengikat Warna</h3><p>Yogyakarta memiliki banyak kampung batik. Salah satu kampung batik yang unik terletak di Karangkajen. Kerajinan tangan ini dikerjakan kelompok ibu rumah tangga yang tergabung dalam Badan Usaha Milik Masyarakat (BUMMas)...</p><p>[...teks lengkap Mengikat Warna...]</p>`,
+            stimulus: stimulusPutriLopian,
+            questionText: '3. Berdasarkan gambar dan isi cerita tersebut, apa yang membuat Putri Lopian selamat dari gelombang dahsyat?',
+            type: 'radio',
+            options: [
+                'Kepandaian Putri Lopian berenang karena istananya dekat pantai.',
+                'Persahabatan Putri Lopian dengan binatang yang selalu mengikutinya.',
+                'Kekuatan yang dimiliki oleh Putri Lopian yang didapat dari teman-temannya.',
+                'Dataran tinggi sebagai tujuan Putri Lopian untuk menghindari gelombang.'
+            ],
+            answer: 'Persahabatan Putri Lopian dengan binatang yang selalu mengikutinya.'
+        },
+        {
+            stimulus: stimulusPutriLopian,
+            questionText: '4. Bagaimana sifat kura-kura beserta alasan yang sesuai berdasarkan cerita tersebut?',
+            instruction: 'Pilihlah jawaban yang benar dengan memberi tanda centang (√)! Jawaban benar lebih dari satu.',
+            type: 'checkbox',
+            options: [
+                'Pemalu karena bila ada orang lain datang dia akan bersembunyi.',
+                'Penolong karena menyelamatkan Putri Lopian dan membawanya ke dataran tinggi.',
+                'Penyayang karena hingga dewasa dia masih menyayangi hewan-hewan lain.',
+                'Peduli karena mengajak Putri Lopian untuk menjauhi pantai setelah terjadi gempa'
+            ],
+            answer: ['Pemalu karena bila ada orang lain datang dia akan bersembunyi.', 'Penolong karena menyelamatkan Putri Lopian dan membawanya ke dataran tinggi.']
+        },
+        {
+            stimulus: stimulusMengikatWarna,
             questionText: '5. Manakah dari pernyataan berikut yang menjelaskan keberhasilan kampung kerajinan batik?',
             type: 'radio',
             options: [
@@ -48,51 +93,68 @@ document.addEventListener('DOMContentLoaded', () => {
             answer: 'Kerajinan batik ecoprint memiliki keistimewaan dibanding teknik lain.'
         },
         {
-            stimulus: `<h3>Mengikat Warna</h3><p>Yogyakarta memiliki banyak kampung batik. Salah satu kampung batik yang unik terletak di Karangkajen. Kerajinan tangan ini dikerjakan kelompok ibu rumah tangga yang tergabung dalam Badan Usaha Milik Masyarakat (BUMMas)...</p><p>[...teks lengkap Mengikat Warna...]</p>`,
+            stimulus: stimulusMengikatWarna,
             questionText: '6. Pernyataan berikut menjelaskan tentang keunggulan-keunggulan batik ecoprint dibanding batik cap atau cetak pada umumnya.',
             instruction: 'Klik pilihan Benar atau Salah untuk setiap pernyataan sesuai isi teks!',
             type: 'true-false',
             statements: [
-                'Bahan membatik ecoprint menggunakan bahan alami sehingga ramah lingkungan dibanding bahan batik cap yang menghasilkan limbah tekstil.',
-                'Desain pada batik ecoprint yang tidak massal menjadikannya eksklusif dibanding desain batik cap yang mudah dijumpai.',
-                'Proses pembuatan batik ecoprint tidak membutuhkan keterampilan khusus dibanding batik cap yang rumit proses pembuatannya.'
+                'A. Bahan membatik ecoprint menggunakan bahan alami sehingga ramah lingkungan dibanding bahan batik cap yang menghasilkan limbah tekstil.',
+                'B. Desain pada batik ecoprint yang tidak massal menjadikannya eksklusif dibanding desain batik cap yang mudah dijumpai.',
+                'C. Proses pembuatan batik ecoprint tidak membutuhkan keterampilan khusus dibanding batik cap yang rumit proses pembuatannya.'
             ],
-            answer: ['Benar', 'Salah', 'Benar']
+            answer: ['Benar', 'Salah', 'Benar'] // Sesuai kunci jawaban A Benar, B Salah, C Benar
+        },
+        {
+            stimulus: stimulusMengikatWarna,
+            questionText: '7. Mengapa teknik kerajinan batik ecoprint bagus untuk memberdayakan ibu rumah tangga?',
+            instruction: 'Pilihlah jawaban yang benar dengan memberi tanda centang (√)! Jawaban benar lebih dari satu.',
+            type: 'checkbox',
+            options: [
+                'Ibu rumah tangga memiliki keahlian berbicara sehingga sangat cocok di bagian penjualan.',
+                'Pengerjaan batik ecoprint butuh keterampilan yang dapat dikerjakan oleh ibu rumah tangga.',
+                'Hasil dari kegiatan membatik ecoprint dapat digunakan sebagai tambahan pemasukan keluarga.',
+                'Batik dengan teknik ecoprint butuh tenaga besar yang sesuai dengan tenaga ibu rumah tangga.'
+            ],
+            answer: ['Pengerjaan batik ecoprint butuh keterampilan yang dapat dikerjakan oleh ibu rumah tangga.', 'Hasil dari kegiatan membatik ecoprint dapat digunakan sebagai tambahan pemasukan keluarga.']
+        },
+        {
+            stimulus: stimulusMengikatWarna,
+            questionText: '8. Setelah membaca teks tersebut, apa yang dapat kamu refleksikan berdasarkan isinya?',
+            instruction: 'Klik pilihan Benar atau Salah untuk setiap pernyataan sesuai isi teks!',
+            type: 'true-false',
+            statements: [
+                'A. Teks mampu membuka wawasan tentang seluk beluk batik ecoprint.',
+                'B. Teks memberikan informasi mengenai peluang usaha dengan membatik ecoprint.',
+                'C. Teks memberikan semangat untuk menjaga kesehatan diri saat membatik ecoprint.'
+            ],
+            answer: ['Benar', 'Benar', 'Salah']
         }
-        // ... (Tambahkan sisa soal 7 dan 8 dengan cara yang sama)
     ];
 
     let currentQuestionIndex = 0;
     let userAnswers = [];
+    let timerInterval;
 
     // === BAGIAN SELEKSI ELEMEN DOM ===
     const pages = document.querySelectorAll('.page');
     const headerLeft = document.getElementById('header-left');
     const headerRight = document.getElementById('header-right');
-
     const loginBtn = document.getElementById('login-btn');
     const submitDataBtn = document.getElementById('submit-data-btn');
     const startTestBtn = document.getElementById('start-test-btn');
-    
     const stimulusPanel = document.getElementById('stimulus-panel');
     const questionPanel = document.getElementById('question-panel');
     const resultText = document.getElementById('result-text');
 
     // === BAGIAN FUNGSI ===
-
-    // Fungsi untuk berpindah halaman
     function showPage(pageId) {
-        pages.forEach(page => {
-            page.style.display = 'none';
-        });
+        pages.forEach(page => page.style.display = 'none');
         document.getElementById(pageId).style.display = 'flex';
     }
 
-    // Fungsi untuk menampilkan pertanyaan
     function renderQuestion(index) {
         const q = questions[index];
         stimulusPanel.innerHTML = q.stimulus;
-        
         let questionHTML = `<h3>${q.questionText}</h3>`;
         if (q.instruction) {
             questionHTML += `<p><small>${q.instruction}</small></p>`;
@@ -100,58 +162,86 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (q.type === 'radio' || q.type === 'checkbox') {
             q.options.forEach(opt => {
-                questionHTML += `
-                    <label style="display: block; margin-bottom: 10px;">
-                        <input type="${q.type}" name="option" value="${opt}"> ${opt}
-                    </label>`;
+                questionHTML += `<label style="display: block; margin-bottom: 10px; text-align:left;"><input type="${q.type}" name="option" value="${opt}"> ${opt}</label>`;
             });
         } else if (q.type === 'true-false') {
             questionHTML += `<table class="statement-table"><thead><tr><th>Pernyataan</th><th>Benar</th><th>Salah</th></tr></thead><tbody>`;
             q.statements.forEach((stmt, i) => {
-                questionHTML += `
-                    <tr>
-                        <td class="statement-text">${stmt}</td>
-                        <td><input type="radio" name="statement_${i}" value="Benar"></td>
-                        <td><input type="radio" name="statement_${i}" value="Salah"></td>
-                    </tr>`;
+                questionHTML += `<tr><td class="statement-text">${stmt}</td><td><input type="radio" name="statement_${i}" value="Benar"></td><td><input type="radio" name="statement_${i}" value="Salah"></td></tr>`;
             });
             questionHTML += `</tbody></table>`;
         }
 
-        questionHTML += `<div class="question-nav"><button id="next-btn">Selanjutnya</button></div>`;
+        const buttonText = (index === questions.length - 1) ? 'Selesai' : 'Selanjutnya';
+        questionHTML += `<div class="question-nav"><button id="next-btn">${buttonText}</button></div>`;
         questionPanel.innerHTML = questionHTML;
 
         document.getElementById('next-btn').addEventListener('click', handleNextQuestion);
         headerLeft.innerHTML = `<b>Soal Nomor ${index + 1} dari ${questions.length}</b>`;
     }
+    
+    function saveAnswer() {
+        const q = questions[currentQuestionIndex];
+        let answer;
+        if (q.type === 'radio') {
+            const selected = document.querySelector('input[name="option"]:checked');
+            answer = selected ? selected.value : null;
+        } else if (q.type === 'checkbox') {
+            answer = [];
+            document.querySelectorAll('input[name="option"]:checked').forEach(el => answer.push(el.value));
+        } else if (q.type === 'true-false') {
+            answer = [];
+            q.statements.forEach((_, i) => {
+                const selected = document.querySelector(`input[name="statement_${i}"]:checked`);
+                answer.push(selected ? selected.value : null);
+            });
+        }
+        userAnswers[currentQuestionIndex] = answer;
+    }
 
-    // Fungsi untuk menyimpan jawaban dan lanjut ke soal berikutnya
+    function calculateScore() {
+        let score = 0;
+        questions.forEach((q, i) => {
+            const userAnswer = userAnswers[i];
+            const correctAnswer = q.answer;
+            let isCorrect = false;
+
+            if (q.type === 'radio') {
+                if (userAnswer === correctAnswer) isCorrect = true;
+            } else if (q.type === 'checkbox') {
+                if (userAnswer && userAnswer.length === correctAnswer.length && userAnswer.every(val => correctAnswer.includes(val))) {
+                    isCorrect = true;
+                }
+            } else if (q.type === 'true-false') {
+                if (userAnswer && userAnswer.length === correctAnswer.length && userAnswer.every((val, index) => val === correctAnswer[index])) {
+                    isCorrect = true;
+                }
+            }
+
+            if (isCorrect) score++;
+        });
+        return score;
+    }
+
     function handleNextQuestion() {
-        // Logika untuk menyimpan jawaban (disimpan di userAnswers)
-        // ...
-
+        saveAnswer();
         currentQuestionIndex++;
         if (currentQuestionIndex < questions.length) {
             renderQuestion(currentQuestionIndex);
         } else {
-            // Tes selesai
-            const correctAnswers = questions.filter((q, i) => {
-                // Logika pengecekan jawaban yang benar
-                return true; // placeholder
-            }).length;
-            resultText.textContent = `Anda menjawab ${correctAnswers} dari ${questions.length} soal dengan benar.`;
+            clearInterval(timerInterval);
+            const finalScore = calculateScore();
+            resultText.textContent = `Anda menjawab ${finalScore} dari ${questions.length} soal dengan benar.`;
             showPage('result-page');
             headerLeft.innerHTML = '<b>PUSMENDIK - SIMULASI ANBK</b>';
             headerRight.innerHTML = '';
         }
     }
-    
+
     // === BAGIAN EVENT LISTENERS ===
-    
     loginBtn.addEventListener('click', () => {
         const user = document.getElementById('username').value;
         const pass = document.getElementById('password').value;
-
         if (user === mockUser.username && pass === mockUser.password) {
             document.getElementById('data-nik').textContent = mockUser.nik;
             document.getElementById('data-nama').textContent = mockUser.nama;
@@ -174,10 +264,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startTestBtn.addEventListener('click', () => {
         let timeLeft = 3600; // 60 menit
-        const timerInterval = setInterval(() => {
+        timerInterval = setInterval(() => {
             if (timeLeft <= 0) {
                 clearInterval(timerInterval);
-                // Logika auto-finish
+                handleNextQuestion(); // Otomatis selesaikan jika waktu habis
             }
             const minutes = Math.floor(timeLeft / 60);
             const seconds = timeLeft % 60;
